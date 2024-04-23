@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Makan Arwi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #3498db;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #555555;
+        }
+        input[type="text"], input[type="submit"], select, input[type="time"] {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #2980b9;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #1f618d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Arwi Resto</h1>
+        <form action="pesan.php" method="post">
+            <label for="nama">Nama Pembeli:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="menu">Menu Makanan:</label>
+            <option value="Nasi Goreng">Nasi Goreng</option>
+            <option value="Mie Goreng">Mie Goreng</option>
+                <option value="Sate Ayam">Sate Ayam</option>
+                <option value="Soto Ayam">Soto Ayam</option>
+
+                <label for="menu">Menu Minuman:</label>
+                <option value="Es teh">Es teh</option>
+                <option value="Es jeruk">Es jeruk</option>
+                <option value="Es susu coklat">Es susu coklat</option>
+                <option value="Teh anget">Teh anget</option>
+                <option value="Teh tawar">Teh tawar</option>
+           
+            <label for="menu">Pilih Menu Makanan:</label>
+            <select name="menu_makanan" id="menu_makanan" onchange="calculateTotal()">
+                <option value="0">Pilih Menu Makanan</option>
+                <option value="15000">Nasi Goreng - Rp 15,000</option>
+                <option value="12000">Mie Goreng - Rp 12,000</option>
+                <option value="20000">Sate Ayam - Rp 20,000</option>
+                <option value="18000">Soto Ayam - Rp 18,000</option>
+                <option value="15000">Bakso - Rp 15,000</option>
+            </select>
+        
+
+            
+            <label for="menu">Pilih Menu Minuman:</label>
+            <select name="menu_minuman" id="menu_minuman" onchange="calculateTotal()">
+                <option value="0">Pilih Menu Minuman</option>
+                <option value="3000">Es Teh - Rp 3,000</option>
+                <option value="4000">Es Jeruk - Rp 4,000</option>
+                <option value="5000">Es Susu Coklat - Rp 5,000</option>
+                <option value="2000">Teh Anget - Rp 2,000</option>
+                <option value="2000">Teh Tawar - Rp 2,000</option>
+            </select>
+            
+            
+            <label for="metode_pembayaran">Pilih Metode Pembayaran:</label>
+            <select id="metode_pembayaran" name="metode_pembayaran" required>
+                <option value="Tunai">Tunai</option>
+                <option value="Transfer">Transfer</option>
+                <option value="GoPay">GoPay</option>
+                <option value="OVO">OVO</option>
+                <option value="Dana">Dana</option>
+            </select>
+
+
+
+            <label for="nama">Pesan yang ingin disampaikan kepada Resto:</label>
+            <input type="text" id="nama" name="nama" required>
+            
+            <label for="jam_buka">Jam Buka:</label>
+            <label for="08:00">08:00</label>
+            
+            <label for="jam_tutup">Jam Tutup:</label>
+            <label for="23:00">23:00</label>
+    
+
+            
+            <input type="submit" value="Pesan">
+        </form>
+    </div>
+
+    
+
+    
+    
+</body>
+</html>
